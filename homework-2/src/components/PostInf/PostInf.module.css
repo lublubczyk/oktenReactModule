@@ -1,0 +1,18 @@
+.PostInf {
+    background-color: aqua;
+    border-radius: 10px;
+    margin: 5px;
+    border: 2px solid black;
+    width: calc(20% - 14px);
+    box-shadow: 5px 3px 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Button{
+    margin-top: auto;
+    border-radius: 5px;
+    box-shadow: 4px 0px 4px black;
+}
+
