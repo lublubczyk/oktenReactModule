@@ -1,0 +1,5 @@
+.Todo{
+    margin: 5px;
+    border: 2px solid;
+    width: calc(20% - 14px);
+}
