@@ -5,6 +5,7 @@ import { UsersPage } from './pages/UsersPage.js';
 import { UserDetailsPage } from "./pages/UserDetailsPage.js";
 import { usersServise } from "./services/usersServise.js";
 import { PostDetailPage } from "./pages/PostDetailPage.js";
+import { commentsServise } from "./services/commentsServise.js";
 
 
 const router = createBrowserRouter([
@@ -13,16 +14,18 @@ const router = createBrowserRouter([
             { index: true, element: <Navigate to={'users'} /> },
             {
                 path: 'users', element: <UsersPage />,
-                loader:()=> usersServise.getAllUsers(),
+                loader: () => usersServise.getAllUsers(),
                 children: [
                     {
                         path: 'user-details/:id', element: <UserDetailsPage />,
-                        loader: ({ params: { id } }) => usersServise.getById(id),
-                        children: [
-                            { path: 'post-detail' , element: <PostDetailPage />}
-                        ]
+                        loader: ({ params: { id } }) => usersServise.getById(id)
+                    },
+                    {
+                        path: 'post-detail/:id', element: <PostDetailPage />,
+                        loader: (({ params: { id } }) => commentsServise.getPostComments(id))
                     }
-            ] },
+                ]
+            },
             
         ]
     }

@@ -13,7 +13,7 @@ const PostDetail = () => {
             <div>UserId: {userId}</div>
             <div>Title: {title}</div>
             <div>Body: {body}</div>
-            <Comments id={id} />
+            <Comments />
         </div>
     )
 };

@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import { useState } from "react";
 
 import { Posts } from '../Posts/Posts.js';
-import style from './UserDetails.module.css'
+import style from './UserDetails.module.css';
 
 const UserDetails = () => {
 

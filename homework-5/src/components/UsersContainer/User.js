@@ -12,7 +12,6 @@ const User = ({ user }) => {
             <div>User Id: {id}</div>
             <div>User Name: {name}</div>
             <button onClick={() => navigate(`user-details/${id}`)} >User Details</button>
-           
         </div>
     )
 };

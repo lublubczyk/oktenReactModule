@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { Post } from "./Post";
 import { usersServise } from "../../services/usersServise";
-import style from './Posts.module.css'
+import style from './Posts.module.css';
 
 const Posts = ({ id }) => {
 

@@ -1,18 +1,12 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useLoaderData } from "react-router-dom";
 
-import { usersServise } from '../../services/usersServise.js';
 import { Comment } from "./Comment.js";
-import style from './Comments.module.css'
+import style from './Comments.module.css';
 
-const Comments = ({ id }) => {
-
-    const [comments, setComments] = useState([]);
-
-    useEffect(() => {
-        usersServise.getPostComments(id).then(({ data }) => setComments(data));
-    }, [id]);
-
+const Comments = () => {
+    
+    const { data: comments } = useLoaderData();
+    
     return (
         <div className={style.Comments}>
             {comments.map(comment => <Comment key={comment.id} comment={comment} />)}

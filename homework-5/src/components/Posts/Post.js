@@ -12,7 +12,9 @@ const Post = ({ post }) => {
         <div className={style.Post}>
             <div>Post Id: {id}</div>
             <div>title: {title}</div>
-            <button onClick={() => navigete('post-detail', { state: post })}>Post Comment</button>
+            <button onClick={() => navigete(`/users/post-detail/${id}`, { state: post })}>
+                Post Comment
+            </button>
         </div>
     )
 };
