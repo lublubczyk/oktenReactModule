@@ -14,19 +14,16 @@ const router = createBrowserRouter([
             { index: true, element: <Navigate to={'users'} /> },
             {
                 path: 'users', element: <UsersPage />,
-                loader: () => usersServise.getAllUsers(),
-                children: [
-                    {
-                        path: 'user-details/:id', element: <UserDetailsPage />,
-                        loader: ({ params: { id } }) => usersServise.getById(id)
-                    },
-                    {
-                        path: 'post-detail/:id', element: <PostDetailPage />,
-                        loader: (({ params: { id } }) => commentsServise.getPostComments(id))
-                    }
-                ]
+                loader: () => usersServise.getAllUsers()
             },
-            
+            {
+                path: 'user-details/:id', element: <UserDetailsPage />,
+                loader: ({ params: { id } }) => usersServise.getById(id)
+            },
+            {
+                path: 'post-detail/:id', element: <PostDetailPage />,
+                loader: (({ params: { id } }) => commentsServise.getPostComments(id))
+            }
         ]
     }
 ]);
