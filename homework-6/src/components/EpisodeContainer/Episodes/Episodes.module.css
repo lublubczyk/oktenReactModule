@@ -1,0 +1,10 @@
+.Episodes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.Button{
+    display: flex;
+    justify-content: space-between;
+}
