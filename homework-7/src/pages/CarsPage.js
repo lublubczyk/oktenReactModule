@@ -12,10 +12,6 @@ const CarsPage = () => {
     const { toDo, toConfirm } = useSelector(state => state.toDo);
     
     useEffect(() => {
-        carAxiosService.getAll().then(({ data }) => dispatch(carsActions.setCarsResponse(data)))
-    }, [dispatch, toConfirm]);
-
-    useEffect(() => {
         if (toConfirm && toDo === 'delete') {
             carAxiosService.deleteCarById(car.id);
             dispatch(toDoActions.setToConfirm())
@@ -34,6 +30,9 @@ const CarsPage = () => {
 
     }, [toConfirm, toDo, car, dispatch]);
 
+    useEffect(() => {
+        carAxiosService.getAll().then(({ data }) => dispatch(carsActions.setCarsResponse(data)))
+    }, [dispatch, toConfirm]);
 
     return (
         <div>
