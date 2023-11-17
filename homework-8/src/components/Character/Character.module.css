@@ -1,0 +1,9 @@
+.Character {
+    width: calc(20% - 12px);
+    border: 1px solid;
+    margin: 5px;
+}
+
+.CharacterImg {
+    max-width: 100%;
+}
